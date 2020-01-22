@@ -2,8 +2,6 @@
 
 Ready checks plugin for fastify Node.js web app framework
 
-...
-
 ## Usage
 
 ### Basic usage
