@@ -77,10 +77,10 @@ An endpoint `/_/ready` will be added to your app which will respond with `500 Se
 ```js
 ```
 
-| name          | description                                                                                      | type                                                      | default  |
-| ------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------- | -------- |
-| logger        | log4j compatible logger (usually [pino](https://www.npmjs.com/package/pino)) to use for logging. | `object`                                                  |          |
-| live          | Either boolean value, function or promise used to determine if app is live                       | `boolean|function => boolean|promise|function => promise` | `true`   |
-| ready         | Either boolean value, function or promise used to determine if app is ready                      | `boolean|function => boolean|promise|function => promise` | `false`  |
-| livePathname  | Pathname for endpoint where live checks will be served                                           | `string`                                                  | `/live`  |
-| readyPathname | Pathname for endpoint where ready checks will be served                                          | `string`                                                  | `/ready` |
+| name          | description                                                                                      | type                                                                         | default  |
+| ------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | -------- |
+| logger        | log4j compatible logger (usually [pino](https://www.npmjs.com/package/pino)) to use for logging. | `object`                                                                     |          |
+| live          | Either boolean value, function or promise used to determine if app is live                       | `boolean` or `function` => `boolean` or `promise` or `function` => `promise` | `true`   |
+| ready         | Either boolean value, function or promise used to determine if app is ready                      | `boolean` or `function` => `boolean` or `promise` or `function` => `promise` | `false`  |
+| livePathname  | Pathname for endpoint where live checks will be served                                           | `string`                                                                     | `/live`  |
+| readyPathname | Pathname for endpoint where ready checks will be served                                          | `string`                                                                     | `/ready` |
