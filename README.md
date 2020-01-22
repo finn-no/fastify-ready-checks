@@ -75,6 +75,13 @@ An endpoint `/_/ready` will be added to your app which will respond with `500 Se
 ## Plugin options
 
 ```js
+app.register(plugin, {
+    logger,
+    livePathname,
+    readyPathname,
+    live,
+    ready,
+});
 ```
 
 | name          | description                                                                                      | type                                                                         | default  |
