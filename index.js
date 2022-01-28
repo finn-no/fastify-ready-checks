@@ -3,12 +3,10 @@
 'use strict';
 
 const fp = require('fastify-plugin');
-const abslog = require('abslog');
 
 module.exports = fp((fastify, opts, done) => {
     let { live, ready } = opts;
-    const { livePathname = '/live', readyPathname = '/ready', logger } = opts;
-    const log = abslog(logger);
+    const { livePathname = '/live', readyPathname = '/ready' } = opts;
     // LIVENESS
     // undefined/null             200
     // false                      500
@@ -47,12 +45,12 @@ module.exports = fp((fastify, opts, done) => {
             const isLive = await live;
             if (!live.then && !isLive) throw new Error();
             reply.code(200).send('Server live');
-            log.trace(
+            reply.log.trace(
                 'Liveness endpoint responded with 200 ok. Server is live.',
             );
         } catch (err) {
             reply.code(500).send('Server not live');
-            log.fatal(
+            reply.log.fatal(
                 'Liveness endpoint responded with a non 200 status code. Server is not live.',
             );
         }
@@ -65,12 +63,12 @@ module.exports = fp((fastify, opts, done) => {
             const isReady = await ready;
             if (!ready.then && !isReady) throw new Error();
             reply.code(200).send('Server ready');
-            log.trace(
+            reply.log.trace(
                 'Readiness endpoint responded with 200 ok. Server is ready.',
             );
         } catch (err) {
             reply.code(500).send('Server not ready');
-            log.error(
+            reply.log.error(
                 'Readiness endpoint responded with a non 200 status code. Server is not ready.',
             );
         }

@@ -28,10 +28,9 @@
     "fastify": "^3.2.1",
     "prettier": "^1.19.1",
     "supertest": "^4.0.2",
-    "tap": "^14.10.6"
+    "tap": "^15.1.6"
   },
   "dependencies": {
-    "abslog": "2.4.0",
-    "fastify-plugin": "2.3.1"
+    "fastify-plugin": "3.0.1"
   }
 }
