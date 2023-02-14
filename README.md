@@ -7,8 +7,9 @@ Ready checks plugin for fastify Node.js web app framework
 ### Basic usage
 
 ```js
-const app = require('fastify')();
-const plugin = require('fastify-ready-checks');
+import fastify from 'fastify';
+import plugin from 'fastify-ready-checks';
+const app = fastify();
 app.register(plugin);
 ```
 

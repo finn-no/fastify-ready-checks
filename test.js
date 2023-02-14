@@ -1,9 +1,7 @@
-'use strict';
-
-const { test } = require('tap');
-const fastify = require('fastify');
-const supertest = require('supertest');
-const plugin = require('./index');
+import { test } from 'tap';
+import fastify from 'fastify';
+import supertest from 'supertest';
+import plugin from './index.js';
 
 test('Plugin default behaviour', async t => {
     const app = fastify();
