@@ -1,11 +1,8 @@
 /* eslint-disable no-restricted-syntax */
+import fp from 'fastify-plugin';
+import abslog from 'abslog';
 
-'use strict';
-
-const fp = require('fastify-plugin');
-const abslog = require('abslog');
-
-module.exports = fp((fastify, opts, done) => {
+export default fp((fastify, opts, done) => {
     let { live, ready } = opts;
     const { livePathname = '/live', readyPathname = '/ready', logger } = opts;
     const log = abslog(logger);
@@ -78,6 +75,5 @@ module.exports = fp((fastify, opts, done) => {
 
     done();
 }, {
-    fastify: '^3.0.0',
     name: 'fastify-ready-checks',
 });
